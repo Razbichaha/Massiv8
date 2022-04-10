@@ -7,22 +7,20 @@ namespace Massiv8
         static void Main(string[] args)
         {
 
-            Random random = new Random();
-            int minimumValue = 0;
-            int maximumValue = 5;
-            int maximumArrayLength = 5;
+            int maximumArrayLength = 10;
 
             int[] array = new int[maximumArrayLength];
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(minimumValue, maximumValue);
+                array[i] = i+1;
             }
 
             foreach (int number in array)
             {
                 Console.Write(number + " ");
             }
+
             Console.Write("\nВведите шаг сдвига ");
             int arrayShoftstep = Int32.Parse(Console.ReadLine());
 
