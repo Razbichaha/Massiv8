@@ -22,23 +22,22 @@ namespace Massiv8
             }
 
             Console.Write("\nВведите шаг сдвига ");
-            int arrayShoftstep = Int32.Parse(Console.ReadLine());
+            int arrayShiftstep = int.Parse(Console.ReadLine());
 
-            if (arrayShoftstep > array.Length)
+            if (arrayShiftstep > array.Length)
             {
-                int tempVariable = arrayShoftstep / array.Length;
-                arrayShoftstep -= (tempVariable * array.Length);
+                arrayShiftstep %= array.Length;
             }
 
             int temporaryVariable = 0;
 
-            for(int i=0;i<arrayShoftstep;i++)
+            for(int i=0;i<arrayShiftstep;i++)
             {
                 temporaryVariable  = array[0];
 
-                for(int ii=0;ii<array.Length-1;ii++)
+                for(int j=0;j<array.Length-1;j++)
                 {
-                    array[ii] = array[ii + 1];
+                    array[j] = array[j + 1];
 
                 }
                 array[array.Length-1] = temporaryVariable ;
